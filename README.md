@@ -14,7 +14,7 @@ echo 'email=??????@gmail.com
 password=??????????' > .env
 deta update -e .env
 
-# When changing requirements.txt
+# When changing requirements.txt or gpapi
 deta deploy purge-dependencies
 deta deploy
 ```
