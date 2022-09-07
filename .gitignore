@@ -10,8 +10,6 @@ dist/
 .venv/
 venv
 .vscode/
+.env
 login.json
 local_example.py
-
-# This file will be generated during build
-gpapi/googleplay_pb2.py
