@@ -636,7 +636,7 @@ class GooglePlayAPI(object):
             cookies = {
                 str(cookie.name): str(cookie.value)
             }
-            # result['file'] = self._deliver_data(downloadUrl, cookies)
+            result['file'] = self._deliver_data(downloadUrl, cookies)
             result['downloadUrl'] = downloadUrl
 
             for split in response.payload.deliveryResponse.appDeliveryData.split:

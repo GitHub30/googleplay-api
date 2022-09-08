@@ -19,7 +19,9 @@ def download(id):
         print(id)
         server = GooglePlayAPI('ja_JP', 'Asia/Tokyo')
         server.login(os.environ['email'], os.environ['password'])
-        return redirect(server.download(id)['downloadUrl'])
+        download = server.download(id)
+        print(download)
+        return redirect(download['downloadUrl'])
     except Exception as e:
         print(e)
         print(traceback.format_exc())
