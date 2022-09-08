@@ -617,11 +617,14 @@ class GooglePlayAPI(object):
         headers = self.getHeaders()
         if downloadToken is not None:
             params['dtok'] = downloadToken
+        print(headers, params)
         response = self.session.get(DELIVERY_URL, headers=headers,
                                 params=params, verify=ssl_verify,
                                 timeout=60,
                                 proxies=self.proxies_config)
+        print(response)
         response = googleplay_pb2.ResponseWrapper.FromString(response.content)
+        print(response)
         if response.commands.displayErrorMessage != "":
             raise RequestError(response.commands.displayErrorMessage)
         elif response.payload.deliveryResponse.appDeliveryData.downloadUrl == "":
