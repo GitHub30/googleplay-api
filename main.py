@@ -1,4 +1,5 @@
 import os
+import re
 import traceback
 from flask import Flask, redirect
 from gpapi.googleplay import GooglePlayAPI
@@ -14,9 +15,11 @@ def root():
 @app.route('/<id>', methods=["GET"])
 def download(id):
     try:
+        id = re.sub('\.apk$', '', id)
+        print(id)
         server = GooglePlayAPI('ja_JP', 'Asia/Tokyo')
         server.login(os.environ['email'], os.environ['password'])
-        return redirect(server.download(id.rstrip('.apk'))['downloadUrl'])
+        return redirect(server.download(id)['downloadUrl'])
     except Exception as e:
         print(e)
         print(traceback.format_exc())
