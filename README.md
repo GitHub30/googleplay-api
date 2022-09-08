@@ -2,6 +2,8 @@
 
 ```bash
 wget https://apks.deta.dev/com.pixel.gun3d.apk
+wget https://apks.deta.dev/jp.co.mcdonalds.android.apk
+wget https://apks.deta.dev/com.starbucks.jp.apk
 ```
 
 # Development
